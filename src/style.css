@@ -29,12 +29,10 @@ ul li:hover {
 
 a {
   text-decoration: none;
-  color: inherit;
+  font-weight: bolder;
+
 }
 
-a:hover {
-  color: white;
-}
 
 input {
   border: 1px solid lightgray;
@@ -107,6 +105,14 @@ input {
   font-size: large;
 }
 
+.other-locations a {
+  color: inherit;
+}
+
+.other-locations a:hover {
+  color: white;
+}
+
 .next-day .fas {
   font-size: 1.5rem;
 }
@@ -121,3 +127,15 @@ input {
 }
 
 
+.open-source {
+  color: #ff5e787a ;
+  font-size: smaller;
+}
+
+
+
+.open-source:hover {
+  color: #ff5e78;
+  font-weight: bolder;
+  font-style: bold;
+  }
