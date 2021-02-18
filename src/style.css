@@ -5,6 +5,7 @@
 body {
   font-family: "Montserrat Alternates", sans-serif;
   color: #424648;
+  padding: 3rem;
 }
 
 ul {
@@ -30,6 +31,7 @@ ul li:hover {
 a {
   text-decoration: none;
   font-weight: bolder;
+  color: inherit;
 
 }
 
@@ -120,10 +122,18 @@ input {
   display: inline-block;
 }
 
+.celsius-temp,
+.farenheit-temp {
+  color: inherit;
+
+}
+
 .celsius-temp:hover,
 .farenheit-temp:hover {
-  color: #ff5e78;
   font-weight: bold;
+  color: #ff5e78;
+
+
 }
 
 
@@ -131,7 +141,6 @@ input {
   color: #ff5e787a ;
   font-size: smaller;
 }
-
 
 
 .open-source:hover {
