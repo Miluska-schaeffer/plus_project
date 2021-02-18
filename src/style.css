@@ -1,0 +1,123 @@
+/*.fas {
+  color: g;
+}*/
+
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #424648;
+}
+
+ul {
+  list-style: none;
+  padding: 2rem 1rem;
+  border-radius: 6px;
+}
+
+ul li {
+  margin-top: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 200ms ease-in-out;
+}
+
+ul li:hover {
+  background-color: #ff5e787a;
+  font-size: larger;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: white;
+}
+
+input {
+  border: 1px solid lightgray;
+  border-radius: 7px;
+}
+
+.background-container {
+  background-color: #ece2e147;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text {
+  font-weight: bolder;
+  color: #ff5e78;
+  font-style: italic;
+  text-shadow: 3px 1px 3px #00000052;
+}
+
+.todays-date {
+  background-color: #fcd1d133;
+  padding: 3rem 1rem;
+  border: 1px solid #fcd1d100;
+}
+
+.next-day {
+  line-height: 4;
+}
+
+.today-weather-row {
+  margin: 27px;
+  background-color: #fcd1d133;
+  border: 1px solid #fcd1d100;
+  padding: 50px;
+}
+
+.today-weather-row h1 {
+  font-size: 4rem;
+}
+
+.today-weather-row h1 {
+  font-size: 3rem;
+}
+
+.todays-icon {
+  font-size: 3rem;
+}
+
+.next-day {
+  background-color: #d2e0dc21;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.next-day:hover {
+  background-color: #ff5e787a;
+  color: white;
+}
+
+.next-days-row {
+  margin: 27px;
+}
+
+.fa-search {
+  font-size: x-large;
+  color: #ff5e78;
+}
+
+.other-locations {
+  font-size: large;
+}
+
+.next-day .fas {
+  font-size: 1.5rem;
+}
+.h1-temperature {
+  display: inline-block;
+}
+
+.celsius-temp:hover,
+.farenheit-temp:hover {
+  color: #ff5e78;
+  font-weight: bold;
+}
+
+
