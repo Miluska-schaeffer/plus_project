@@ -89,10 +89,6 @@ let months = [
 ];
 
 
-
-
-
-
 function formatDate (timestamp) {
  let now = new Date(timestamp);
  let day = days[now.getDay()];
@@ -128,7 +124,7 @@ function displayTemperature(response) {
 
 
 function displayRelatedInfo(response) {
-  console.log(response.data);
+  // console.log(response.data);
   let currentCity = document.querySelector("#currentcity-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -139,7 +135,7 @@ function displayRelatedInfo(response) {
 
 
   let dayTime = response.data.dt * 1000;
-    console.log(dayTime);
+
   currentCity.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
@@ -161,14 +157,29 @@ function displayIcon(response){
   );
 }
 
+function search(city) {
+  let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayRelatedInfo);
+  axios.get(apiUrl).then(displayIcon);
 
-let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
-let city ="New York"
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-console.log(apiUrl);
+}
 
-axios.get(apiUrl).then(displayTemperature);
-axios.get(apiUrl).then(displayRelatedInfo);
-axios.get(apiUrl).then(displayIcon);
 
+function handleSubmit(event) {
+  event.preventDefault();
+ let cityInput = document.querySelector("#city-input");
+
+ search(cityInput.value);
+ }
+
+
+search("Berlin");
+
+
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit",  handleSubmit);
 
