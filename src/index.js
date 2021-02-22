@@ -89,6 +89,10 @@ let months = [
 ];
 
 
+
+
+
+
 function formatDate (timestamp) {
  let now = new Date(timestamp);
  let day = days[now.getDay()];
@@ -144,12 +148,27 @@ function displayRelatedInfo(response) {
   timeElement.innerHTML = formatTime(dayTime);
 }
 
+function displayIcon(response){
+  let iconElement = document.querySelector("#icon");
+  let iconImg = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    'src',
+    `http://openweathermap.org/img/wn/${iconImg}@2x.png`
+  );
+  iconElement.setAttribute(
+    'alt',
+     response.data.weather[0].description
+  );
+}
+
 
 let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
-let city ="Portugal"
+let city ="New York"
 let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 console.log(apiUrl);
 
 axios.get(apiUrl).then(displayTemperature);
 axios.get(apiUrl).then(displayRelatedInfo);
+axios.get(apiUrl).then(displayIcon);
+
 
