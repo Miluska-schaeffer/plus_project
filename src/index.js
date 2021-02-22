@@ -176,10 +176,76 @@ function handleSubmit(event) {
  }
 
 
-search("Berlin");
+search("lima");
 
 
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit",  handleSubmit);
+
+
+// berlin
+function showBerlin(event){
+  event.preventDefault();
+  let berlin = document.querySelector("#berlin");
+  search(berlin.innerHTML);
+}
+
+
+ berlin.addEventListener('click', showBerlin );
+
+// // new york
+// function showNewYork(event){
+//   event.preventDefault();
+//   let newYork = document.querySelector("#new-york");
+//   search(newYork.innerHTML);
+// }
+
+
+//  newYork.addEventListener('click', showNewYork );
+
+// bogota
+function showBogota(event){
+  event.preventDefault();
+  let bogota = document.querySelector("#bogota");
+  search(bogota.innerHTML);
+}
+
+
+ bogota.addEventListener('click', showBogota );
+
+// paris
+function showParis(event){
+  event.preventDefault();
+  let paris = document.querySelector("#paris");
+  search(paris.innerHTML);
+}
+
+
+ paris.addEventListener('click', showParis );
+
+
+// los angeles
+function showLA(event){
+  event.preventDefault();
+  let losAng = document.querySelector("#los-angeles");
+  search(losAng.innerHTML);
+}
+
+
+ losAng.addEventListener('click', showLA);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
