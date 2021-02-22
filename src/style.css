@@ -148,3 +148,9 @@ input {
   font-weight: bolder;
   font-style: bold;
   }
+
+.weather-description {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+
+}
