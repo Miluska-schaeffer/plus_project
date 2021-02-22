@@ -108,65 +108,101 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit",  handleSubmit);
 
-
-// berlin
-function showBerlin(event){
-  event.preventDefault();
-  let berlin = document.querySelector("#berlin");
-  search(berlin.innerHTML);
-}
-
-
- berlin.addEventListener("click", showBerlin );
-
-// new york
-function showNewYork(event){
-  event.preventDefault();
-  let newYork = document.querySelector("#new-york");
-  search(newYork.innerHTML);
-}
-
-
- newYork.addEventListener("click", showNewYork );
-
-// bogota
-function showBogota(event){
-  event.preventDefault();
-  let bogota = document.querySelector("#bogota");
-  search(bogota.innerHTML);
-}
-
-
- bogota.addEventListener("click", showBogota );
-
-// paris
-function showParis(event){
-  event.preventDefault();
-  let paris = document.querySelector("#paris");
-  search(paris.innerHTML);
-}
-
-
- paris.addEventListener("click", showParis );
-
-
-// los angeles
-function showLA(event){
-  event.preventDefault();
-  let losAng = document.querySelector("#los-angeles");
-  search(losAng.innerHTML);
-}
-
-
- losAng.addEventListener("click", showLA);
-
-
-
 // default
 search("lima");
 
 
 
+
+// // berlin
+// function showBerlin(event){
+//   event.preventDefault();
+//   let berlin = document.querySelector("#berlin");
+//   search(berlin.innerHTML);
+// }
+
+
+//  berlin.addEventListener("click", showBerlin );
+
+// // // new york
+// // function showNewYork(event){
+// //   event.preventDefault();
+// //   let newYork = document.querySelector("#new-york");
+// //   search(newYork.innerHTML);
+// // }
+
+
+// //  newYork.addEventListener("click", showNewYork );
+
+// // bogota
+// function showBogota(event){
+//   event.preventDefault();
+//   let bogota = document.querySelector("#bogota");
+//   search(bogota.innerHTML);
+// }
+
+
+//  bogota.addEventListener("click", showBogota );
+
+// // paris
+// function showParis(event){
+//   event.preventDefault();
+//   let paris = document.querySelector("#paris");
+//   search(paris.innerHTML);
+// }
+
+
+//  paris.addEventListener("click", showParis );
+
+
+// // // los angeles
+// // function showLA(event){
+// //   event.preventDefault();
+// //   let losAng = document.querySelector("#los-angeles");
+// //   search(losAng.innerHTML);
+// // }
+
+
+// //  losAng.addEventListener("click", showLA);
+
+
+
+
+// berlin
+function showBerlin(event) {
+  event.preventDefault();
+  search(berlin.innerHTML);
+}
+let berlin = document.querySelector("#berlin");
+berlin.addEventListener("click", showBerlin);
+// new york
+function showNewYork(event) {
+  event.preventDefault();
+  search(newYork.innerHTML);
+}
+let newYork = document.querySelector("#new-york");
+newYork.addEventListener("click", showNewYork);
+// bogota
+function showBogota(event) {
+  event.preventDefault();
+  search(bogota.innerHTML);
+}
+let bogota = document.querySelector("#bogota");
+bogota.addEventListener("click", showBogota);
+// paris
+function showParis(event) {
+  event.preventDefault();
+  search(paris.innerHTML);
+}
+let paris = document.querySelector("#paris");
+paris.addEventListener("click", showParis);
+// los angeles
+function showLA(event) {
+  event.preventDefault();
+  search(losAng.innerHTML);
+}
+let losAng = document.querySelector("#los-angeles");
+losAng.addEventListener("click", showLA);
 
 
 
