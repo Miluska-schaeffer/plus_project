@@ -104,9 +104,6 @@ function handleSubmit(event) {
  }
 
 
-search("lima");
-
-
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit",  handleSubmit);
@@ -122,15 +119,15 @@ function showBerlin(event){
 
  berlin.addEventListener("click", showBerlin );
 
-// // new york
-// function showNewYork(event){
-//   event.preventDefault();
-//   let newYork = document.querySelector("#new-york");
-//   search(newYork.innerHTML);
-// }
+// new york
+function showNewYork(event){
+  event.preventDefault();
+  let newYork = document.querySelector("#new-york");
+  search(newYork.innerHTML);
+}
 
 
-//  newYork.addEventListener("click", showNewYork );
+ newYork.addEventListener("click", showNewYork );
 
 // bogota
 function showBogota(event){
@@ -153,20 +150,20 @@ function showParis(event){
  paris.addEventListener("click", showParis );
 
 
-// // los angeles
-// function showLA(event){
-//   event.preventDefault();
-//   let losAng = document.querySelector("#los-angeles");
-//   search(losAng.innerHTML);
-// }
+// los angeles
+function showLA(event){
+  event.preventDefault();
+  let losAng = document.querySelector("#los-angeles");
+  search(losAng.innerHTML);
+}
 
 
-//  losAng.addEventListener("click", showLA);
-
-
+ losAng.addEventListener("click", showLA);
 
 
 
+// default
+search("lima");
 
 
 
