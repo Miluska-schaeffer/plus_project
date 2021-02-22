@@ -58,6 +58,9 @@ input {
   padding: 3rem 1rem;
   border: 1px solid #fcd1d100;
 }
+.todays-date-text {
+  margin-bottom: 5px;
+}
 
 .next-day {
   line-height: 4;
@@ -153,4 +156,8 @@ input {
     text-transform: capitalize;
     font-size: 1.25rem;
 
+}
+
+.icon{
+  max-width: 200px;
 }
