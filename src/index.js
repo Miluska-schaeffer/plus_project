@@ -33,7 +33,7 @@ function formatDate (timestamp) {
  let nowMonth = months[now.getMonth()];
 
  let nowYear = now.getFullYear();
- return `${day} ${nowDate}.${nowMonth}.${nowYear}`;
+ return `${day} <br> ${nowDate} ${nowMonth} ${nowYear}`;
 
 }
 
@@ -53,18 +53,15 @@ if(currentMinutes < 10) {
 
 
 function displayTemperature(response) {
+    console.log(response.data);
   let h1Temperature = document.querySelector("#h1-temperature");
-  h1Temperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
-  //
+  h1Temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   let currentCity = document.querySelector("#currentcity-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#todays-date-text");
-
   let timeElement = document.querySelector("#city-time");
-
-
   let dayTime = response.data.dt * 1000;
 
   currentCity.innerHTML = response.data.name;
@@ -73,6 +70,7 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(dayTime);
   timeElement.innerHTML = formatTime(dayTime);
+
   //
   let iconElement = document.querySelector("#icon");
   let iconImg = response.data.weather[0].icon;
@@ -84,6 +82,8 @@ function displayTemperature(response) {
     'alt',
      response.data.weather[0].description
   );
+  document.body.style.backgroundImage = `url(imgs/${iconImg}@2x.png)`;
+
 
 }
 
@@ -91,10 +91,10 @@ function search(city) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
   let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
   console.log(apiUrl);
+
   axios.get(apiUrl).then(displayTemperature);
 
 }
-
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -102,7 +102,6 @@ function handleSubmit(event) {
 
  search(cityInput.value);
  }
-
 
 
 let searchForm = document.querySelector("#search-form");

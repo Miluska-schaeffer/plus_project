@@ -4,35 +4,35 @@
 
 body {
   font-family: "Montserrat Alternates", sans-serif;
-  color: #424648;
+  color: white;
   padding: 3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
 }
 
 ul {
   list-style: none;
-  padding: 2rem 1rem;
   border-radius: 6px;
+  padding: 0;
 }
 
 ul li {
-  margin-top: 8px;
   text-decoration: none;
   cursor: pointer;
-  padding: 10px;
   transition: all 200ms ease-in-out;
 }
 
 ul li:hover {
-  background-color: #ff5e787a;
-  font-size: larger;
-  color: white;
+/*  background-color: #ff5e787a;
+*/  color: white;
 }
 
 a {
   text-decoration: none;
   font-weight: bolder;
   color: inherit;
-
 }
 
 
@@ -42,15 +42,70 @@ input {
 }
 
 .background-container {
-  background-color: #ece2e147;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 8px 16px 0px;
+  display: block;
+  margin-top: 20px;
+  padding: 30px 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image: linear-gradient(#000000d9, #5308a3eb)
 }
+
+
+
+.weather-page {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+
 
 .logo-text {
   font-weight: bolder;
   color: #ff5e78;
   font-style: italic;
   text-shadow: 3px 1px 3px #00000052;
+  text-align: center;
+  margin-top: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.weather-app {
+  padding: 20px 40px;
+}
+
+.search-form-row {
+  margin-top: 3rem;
+}
+
+.search-form-container {
+  margin-bottom: 10px;
+}
+.form-control {
+  width: 400px;
+  display: inline;
+}
+
+@media (min-width: 375px) {
+  .form-control {
+  width: 150px;
+}
+}
+
+@media (min-width: 500px) {
+  .form-control {
+  width: 230px;
+}
+}
+
+@media (min-width: 630px) {
+  .form-control {
+  width: 340px;
+}
+}
+.fa-search {
+  font-size: x-large;
+  color: #ff5e78;
 }
 
 .todays-date {
@@ -59,38 +114,63 @@ input {
   border: 1px solid #fcd1d100;
 }
 .todays-date-text {
-  margin-bottom: 5px;
+ margin-bottom: 0px;
+
 }
 
 .next-day {
   line-height: 4;
 }
 
+.left-side {
+    text-align: left;
+    margin-top: 21px;
+  }
+
+
+
+/*.right-side {
+     padding: 27px;
+    margin: 10px;
+}
+
 .today-weather-row {
   margin: 27px;
-  background-color: #fcd1d133;
-  border: 1px solid #fcd1d100;
+/*  background-color: #fcd1d133;
+*/  border: 1px solid #fcd1d100;
   padding: 50px;
 }
 
-.today-weather-row h1 {
-  font-size: 4rem;
-}
+
 
 .today-weather-row h1 {
   font-size: 3rem;
+  margin-bottom: 0;
+
 }
 
 .todays-icon {
   font-size: 3rem;
 }
 
-.next-day {
-  background-color: #d2e0dc21;
-  padding: 20px;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
+
+.next-hours {
+  display: inline;
+
 }
+
+.current-city {
+  margin-bottom: 0;
+}
+
+
+.actual-temperature {
+  font-size:2rem;
+}
+.city-time {
+  display: block;
+}
+
 
 .next-day:hover {
   background-color: #ff5e787a;
@@ -101,18 +181,31 @@ input {
   margin: 27px;
 }
 
-.fa-search {
-  font-size: x-large;
-  color: #ff5e78;
-}
 
-.other-locations {
-  font-size: large;
-}
 
-.other-locations a {
+
+
+
+ul.fixed-cities-card li a {
   color: inherit;
+  display: inline-block;
 }
+
+
+ul.fixed-cities-card {
+  padding: 0px 24px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+ul.fixed-cities-card li{
+  display: inline;
+  text-align: left;
+  padding: 2px;
+
+}
+
 
 .other-locations a:hover {
   color: white;
@@ -125,6 +218,12 @@ input {
   display: inline-block;
 }
 
+
+.temp-metrics {
+  display: inline;
+    position: relative;
+    top: -12px;
+}
 .celsius-temp,
 .farenheit-temp {
   color: inherit;
@@ -135,8 +234,6 @@ input {
 .farenheit-temp:hover {
   font-weight: bold;
   color: #ff5e78;
-
-
 }
 
 
@@ -153,10 +250,9 @@ input {
   }
 
 .weather-description {
-    text-transform: capitalize;
-    font-size: 1.25rem;
+   display: block;
+ }
 
-}
 
 .icon{
   max-width: 200px;
