@@ -68,6 +68,14 @@ input {
   padding: 20px 40px;
 }
 
+@media (min-width: 375px){
+.weather-app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+}
+
 .search-form-row {
   margin-top: 3rem;
 }
@@ -120,6 +128,7 @@ input {
     text-align: left;
     margin-top: 21px;
   }
+
 
 
 
