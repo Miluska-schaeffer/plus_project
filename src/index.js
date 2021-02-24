@@ -53,7 +53,6 @@ if(currentMinutes < 10) {
 
 
 function displayTemperature(response) {
-    console.log(response.data);
   let h1Temperature = document.querySelector("#h1-temperature");
   h1Temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   let currentCity = document.querySelector("#currentcity-name");
@@ -90,7 +89,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
-  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
 
   axios.get(apiUrl).then(displayTemperature);
