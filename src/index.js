@@ -82,14 +82,15 @@ function displayTemperature(response) {
     'alt',
      response.data.weather[0].description
   );
-  document.body.style.backgroundImage = `url(imgs/${iconImg}@2x.png)`;
 
+  document.body.style.backgroundImage = `url(imgs/${iconImg}@2x.png)`;
 
 }
 
+
 function search(city) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
-  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
 
   axios.get(apiUrl).then(displayTemperature);
