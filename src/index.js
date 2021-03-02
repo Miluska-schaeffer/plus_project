@@ -54,7 +54,7 @@ if(currentMinutes < 10) {
 
 function displayTemperature(response) {
   let h1Temperature = document.querySelector("#h1-temperature");
-  h1Temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+
   let currentCity = document.querySelector("#currentcity-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -62,6 +62,9 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#todays-date-text");
   let timeElement = document.querySelector("#city-time");
   let dayTime = response.data.dt * 1000;
+
+  celsiusTemperature = response.data.main.temp;
+  h1Temperature.innerHTML = `${Math.round(celsiusTemperature)}`;
 
   currentCity.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -104,69 +107,51 @@ function handleSubmit(event) {
  }
 
 
+
+// temp c/f conversions
+
+function showFarenheitTemp(event) {
+  event.preventDefault();
+  let h1Temperature = document.querySelector("#h1-temperature");
+// remove actvie class from celsois
+celsiusLink.classList.remove("active");
+farenheitLink.classList.add("active");
+  let farenheitTemperature = (celsiusTemperature* 9 ) / 5 + 32;
+  h1Temperature.innerHTML = Math.round(farenheitTemperature);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+  let h1Temperature = document.querySelector("#h1-temperature");
+  h1Temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+
+
+
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit",  handleSubmit);
+
+let farenheitLink = document.querySelector("#farenheit-temp");
+farenheitLink.addEventListener("click", showFarenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+
+
+
+
+
 
 // default
 search("lima");
 
-
-
-
-// // berlin
-// function showBerlin(event){
-//   event.preventDefault();
-//   let berlin = document.querySelector("#berlin");
-//   search(berlin.innerHTML);
-// }
-
-
-//  berlin.addEventListener("click", showBerlin );
-
-// // // new york
-// // function showNewYork(event){
-// //   event.preventDefault();
-// //   let newYork = document.querySelector("#new-york");
-// //   search(newYork.innerHTML);
-// // }
-
-
-// //  newYork.addEventListener("click", showNewYork );
-
-// // bogota
-// function showBogota(event){
-//   event.preventDefault();
-//   let bogota = document.querySelector("#bogota");
-//   search(bogota.innerHTML);
-// }
-
-
-//  bogota.addEventListener("click", showBogota );
-
-// // paris
-// function showParis(event){
-//   event.preventDefault();
-//   let paris = document.querySelector("#paris");
-//   search(paris.innerHTML);
-// }
-
-
-//  paris.addEventListener("click", showParis );
-
-
-// // // los angeles
-// // function showLA(event){
-// //   event.preventDefault();
-// //   let losAng = document.querySelector("#los-angeles");
-// //   search(losAng.innerHTML);
-// // }
-
-
-// //  losAng.addEventListener("click", showLA);
-
-
-
-
+// fixed citites:
 // berlin
 function showBerlin(event) {
   event.preventDefault();
@@ -202,9 +187,6 @@ function showLA(event) {
 }
 let losAng = document.querySelector("#los-angeles");
 losAng.addEventListener("click", showLA);
-
-
-
 
 
 
