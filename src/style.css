@@ -222,20 +222,25 @@ ul.fixed-cities-card li{
 
 }
 
+.celsius-temp:hover,
+.farenheit-temp:hover {
+  color: #ff5e787a;
+
+}
 .temp-metrics .active {
   color: white;
   cursor: default;
 }
 
-.celsius-temp:hover, .farenheit-temp:hover {
+/*.celsius-temp:hover, .farenheit-temp:hover {
   font-weight: bold;
-  color: #ff5e787a;
+  color: inherit;
 
-}
-
+}*/
 
 .temp-metrics .active:hover {
   text-decoration: none;
+
 
 }
 
