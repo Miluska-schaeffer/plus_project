@@ -92,7 +92,7 @@ function displayTemperature(response) {
   let iconImg = response.data.weather[0].icon;
   iconElement.setAttribute(
     'src',
-    `http://openweathermap.org/img/wn/${iconImg}@2x.png`
+    `https://openweathermap.org/img/wn/${iconImg}@2x.png`
   );
   iconElement.setAttribute(
     'alt',
@@ -234,9 +234,7 @@ losAng.addEventListener("click", showLA);
 function searchLocation(position) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
-
 
 }
 
