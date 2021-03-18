@@ -50,18 +50,6 @@ if(currentMinutes < 10) {
 
  return `${currentHour}:${currentMinutes}`;
 }
-// function formatHours(timestamp) {
-//   let now = new Date(timestamp);
-// let currentHour = now.getHours();
-// if(currentHour < 10) {
-//   currentHour = `0${currentHour}`;
-// }
-// let currentMinutes = now.getMinutes();
-// if(currentMinutes < 10) {
-//   currentMinutes = `0${currentMinutes}`;
-// }
-//   return `${currentHour}:${currentMinutes}`;
-// }
 
 function displayTemperature(response) {
   // console.log(response);
@@ -103,6 +91,7 @@ function displayTemperature(response) {
 
 }
 
+// forecast
 function displayForecast(response) {
       let forecastEl = document.querySelector("#forecast");
       forecastEl.innerHTML = null;
@@ -116,7 +105,7 @@ function displayForecast(response) {
           ${formatTime(forecast.dt * 1000)}
         </h4>
         <img
-          class="forecast-icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          class="forecast-icon" src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
         <div class="">
           <span class="forecast-times">
              ${Math.round(forecast.main.temp_max)}°/
@@ -135,7 +124,6 @@ function displayForecast(response) {
 function search(city) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  // console.log(apiUrl);
 
   axios.get(apiUrl).then(displayTemperature);
 
@@ -151,9 +139,7 @@ function handleSubmit(event) {
  }
 
 
-
 // temp c/f conversions
-
 function showFarenheitTemp(event) {
   event.preventDefault();
   let h1Temperature = document.querySelector("#h1-temperature");
@@ -173,8 +159,6 @@ function showCelsiusTemp(event) {
 }
 
 
-
-
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
@@ -188,10 +172,9 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 
 
 
-
-
 // default
 search("berlin");
+
 
 // fixed citites:
 // berlin
@@ -230,23 +213,21 @@ function showLA(event) {
 let losAng = document.querySelector("#los-angeles");
 losAng.addEventListener("click", showLA);
 
-
+// currentposition
 function searchLocation(position) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl =
+  `
+  https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric
+  `;
   axios.get(apiUrl).then(displayTemperature);
-
 }
 
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-
-
 }
 
 let locButton = document.querySelector("#currentloc-button");
 locButton.addEventListener("click", getCurrentPosition);
-
-
 
