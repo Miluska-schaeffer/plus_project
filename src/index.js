@@ -105,7 +105,7 @@ function displayForecast(response) {
           ${formatTime(forecast.dt * 1000)}
         </h4>
         <img
-          class="forecast-icon" src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          class="forecast-icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
         <div class="">
           <span class="forecast-times">
              ${Math.round(forecast.main.temp_max)}°/
