@@ -50,11 +50,24 @@ if(currentMinutes < 10) {
 
  return `${currentHour}:${currentMinutes}`;
 }
-
+// function formatHours(timestamp) {
+//   let now = new Date(timestamp);
+// let currentHour = now.getHours();
+// if(currentHour < 10) {
+//   currentHour = `0${currentHour}`;
+// }
+// let currentMinutes = now.getMinutes();
+// if(currentMinutes < 10) {
+//   currentMinutes = `0${currentMinutes}`;
+// }
+//   return `${currentHour}:${currentMinutes}`;
+// }
 
 function displayTemperature(response) {
+  // console.log(response);
   let h1Temperature = document.querySelector("#h1-temperature");
-
+  let currentCountry = document.querySelector("#current-country");
+  // console.log(currentCountry);
   let currentCity = document.querySelector("#currentcity-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -66,7 +79,8 @@ function displayTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   h1Temperature.innerHTML = `${Math.round(celsiusTemperature)}`;
 
-  currentCity.innerHTML = response.data.name;
+  currentCity.innerHTML = `${response.data.name},`;
+  currentCountry.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -89,14 +103,44 @@ function displayTemperature(response) {
 
 }
 
+function displayForecast(response) {
+      let forecastEl = document.querySelector("#forecast");
+      forecastEl.innerHTML = null;
+      let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+      forecast = response.data.list[index];
+      forecastEl.innerHTML += `
+      <div class="col-2 text-center">
+        <h4 class="forecast-times">
+          ${formatTime(forecast.dt * 1000)}
+        </h4>
+        <img
+          class="forecast-icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+        <div class="">
+          <span class="forecast-times">
+             ${Math.round(forecast.main.temp_max)}°/
+          </span>
+          <span class="forecast-times">
+             ${Math.round(forecast.main.temp_min)}°
+          </span>
+        </div>
+      </div>
+  `;
+
+  }
+}
+
 
 function search(city) {
   let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  // console.log(apiUrl);
 
   axios.get(apiUrl).then(displayTemperature);
 
+  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -146,10 +190,8 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 
 
 
-
-
 // default
-search("lima");
+search("berlin");
 
 // fixed citites:
 // berlin
@@ -188,6 +230,25 @@ function showLA(event) {
 let losAng = document.querySelector("#los-angeles");
 losAng.addEventListener("click", showLA);
 
+
+function searchLocation(position) {
+  let apiKey = "214166bc4b81334cc7b642eccb7e6e84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+
+
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+
+
+}
+
+let locButton = document.querySelector("#currentloc-button");
+locButton.addEventListener("click", getCurrentPosition);
 
 
 

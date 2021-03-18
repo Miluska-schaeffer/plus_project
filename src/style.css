@@ -5,7 +5,6 @@ body {
   padding: 3rem;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
 ul {
@@ -30,7 +29,6 @@ a {
   color: inherit;
 }
 
-
 input {
   border: 1px solid lightgray;
   border-radius: 7px;
@@ -46,13 +44,10 @@ input {
   background-image: linear-gradient(#000000d6, #5308a3c9)
 }
 
-
 .weather-page {
   max-width: 600px;
   margin: 40px auto;
 }
-
-
 
 .logo-text {
   font-weight: bolder;
@@ -61,7 +56,7 @@ input {
   text-shadow: 3px 1px 3px #00000052;
   text-align: center;
   margin-top: 2rem 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .weather-app {
@@ -69,11 +64,11 @@ input {
 }
 
 @media (min-width: 375px){
-.weather-app {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  .weather-app {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
 
-}
+  }
 }
 
 .search-form-row {
@@ -83,31 +78,17 @@ input {
 .search-form-container {
   margin-bottom: 10px;
 }
+
 .form-control {
   width: 400px;
   display: inline;
 }
 
-@media (min-width: 375px) {
-  .form-control {
-  width: 150px;
-}
-}
-
-@media (min-width: 500px) {
-  .form-control {
-  width: 230px;
-}
-}
-
-@media (min-width: 630px) {
-  .form-control {
-  width: 340px;
-}
-}
-.fa-search {
+.fa-search,
+.fa-map-marker-alt {
   font-size: x-large;
   color: #ff5e78;
+  padding: 1rem;
 }
 
 .todays-date {
@@ -115,9 +96,9 @@ input {
   padding: 3rem 1rem;
   border: 1px solid #fcd1d100;
 }
+
 .todays-date-text {
  margin-bottom: 0px;
-
 }
 
 .next-day {
@@ -127,31 +108,20 @@ input {
 .left-side {
     text-align: left;
     margin-top: 21px;
-  }
-
-
-
+}
 
 .today-weather-row h1 {
   font-size: 3rem;
   margin-bottom: 0;
-
 }
 
 .todays-icon {
   font-size: 3rem;
 }
 
-
-.next-hours {
-  display: inline;
-
-}
-
 .current-city {
   margin-bottom: 0;
 }
-
 
 .actual-temperature {
   font-size:2rem;
@@ -159,7 +129,6 @@ input {
 .city-time {
   display: block;
 }
-
 
 .next-day:hover {
   background-color: #ff5e787a;
@@ -170,16 +139,10 @@ input {
   margin: 27px;
 }
 
-
-
-
-
-
 ul.fixed-cities-card li a {
   color: inherit;
   display: inline-block;
 }
-
 
 ul.fixed-cities-card {
   padding: 0px 24px;
@@ -192,21 +155,23 @@ ul.fixed-cities-card li{
   display: inline;
   text-align: left;
   padding: 2px;
-
 }
 
+ul.fixed-cities-card a {
+  transition: all 200ms ease-in-out;
+}
 
-.other-locations a:hover {
-  color: white;
+ul.fixed-cities-card a:hover {
+  color: #ff5e78;
 }
 
 .next-day .fas {
   font-size: 1.5rem;
 }
+
 .h1-temperature {
   display: inline-block;
 }
-
 
 .temp-metrics {
   display: inline;
@@ -215,39 +180,31 @@ ul.fixed-cities-card li{
 
 }
 
-
 .celsius-temp,
 .farenheit-temp {
   color: #ff5e78;
+  transition: all 200ms ease-in-out;
 
 }
 
 .celsius-temp:hover,
 .farenheit-temp:hover {
   color: #ff5e787a;
-
 }
+
 .temp-metrics .active {
   color: white;
   cursor: default;
 }
 
-/*.celsius-temp:hover, .farenheit-temp:hover {
-  font-weight: bold;
-  color: inherit;
-
-}*/
-
 .temp-metrics .active:hover {
   text-decoration: none;
-
-
 }
-
 
 .open-source {
   color: #ff5e787a ;
   font-size: smaller;
+  transition: all 200ms ease-in-out;
 }
 
 
@@ -258,7 +215,7 @@ ul.fixed-cities-card li{
   }
 
 .weather-description {
-   display: block;
+  display: block;
  }
 
 
@@ -268,4 +225,51 @@ ul.fixed-cities-card li{
 
 .source-container {
   color:lightgray;
+}
+
+.forecast-row {
+  padding: 15px;
+}
+
+.forecast-icon {
+  max-width: 50px;
+  margin: 0 auto;
+}
+
+.forecast-times {
+  font-size: 14px;
+}
+
+@media (min-width: 300px) {
+  .form-control {
+  width: 140px;
+  font-size: 8px;
+  }
+  .forecast-times {
+  font-size: 9px;
+  }
+  .forecast-icon {
+  max-width: 30px;
+  margin: 0 auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .form-control {
+  width: 200px;
+  }
+  .forecast-times {
+  font-size: 10px;
+  }
+}
+
+@media (min-width: 630px) {
+  .form-control {
+  width: 250px;
+  height: 40px;
+  }
+  .forecast-times {
+  font-size: 14px;
+  }
+
 }

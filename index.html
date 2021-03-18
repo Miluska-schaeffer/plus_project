@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,27 +10,23 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="#">
     <script
       src="https://kit.fontawesome.com/b910d9f030.js"
       crossorigin="anonymous"
     ></script>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;1,800&display=swap");
     </style>
   </head>
-
   <body id="background">
-
     <div class="weather-page">
-
       <div class="container rounded background-container my-3" id="weather-app-container">
-
-          <p class="logo-text">cuteweather
-            <i class="fas fa-globe"></i>
-          </p>
+          <h1 class="logo-text">cuteweather
+            <i class="fas fa-spa"></i>
+          </h1>
           <div class="row search-form-row">
             <div class="col">
                    <div class="search-form-container text-center">
@@ -49,13 +44,13 @@
                                   class="btn btn-flat"
                                 >
                                   <i class="fas fa-search"></i>
+                                  <i id="currentloc-button" class="fas fa-map-marker-alt"></i>
                                 </button>
+
                         </form>
                     </div>
               </div>
           </div>
-
-
           <div class="row">
                 <div class="col" id="other-locations">
                   <ul class="fixed-cities-card">
@@ -67,102 +62,43 @@
                   </ul>
               </div>
           </div>
-
-
-
           <div class="row weather-app">
-
             <div class="col">
-
               <div class="left-side">
                     <h1 class="current-city" id="currentcity-name"></h1>
+                    <h2 id="current-country"></h2>
                     Last updated :
                     <span  class="city-time" id="city-time"></span>
                     <p class="todays-date-text" id="todays-date-text"></p>
               </div>
-
             </div>
-
             <div class="col">
-
-
               <div class="right-side text-center">
-                    <img
-                      alt="Rainy"
-                      id="icon">
-                   <div>
-                    <span class="actual-temperature" id="h1-temperature"></span>
-                    <span class="temp-metrics">
-                      <a class="celsius-temp active" href="#" id="celsius-temp">C° </a> |
-                      <a class="farenheit-temp" href="#" id="farenheit-temp"> F° </a>
-                    </span>
-                    <span class="weather-description" id="description"></span>
-                  </div>
+                <img
+                  alt="Rainy"
+                  id="icon">
+                <div>
+                  <span class="actual-temperature" id="h1-temperature"></span>
+                  <span class="temp-metrics">
+                    <a class="celsius-temp active" href="#" id="celsius-temp">C° </a> |
+                    <a class="farenheit-temp" href="#" id="farenheit-temp"> F° </a>
+                  </span>
+                  <span class="weather-description" id="description"></span>
+                </div>
                   <p class="weather-description">
                     Humidity: <span id="humidity"></span> <br/>
                     Wind: <span id="wind"></span> km/h
                   </p>
-
               </div>
             </div>
-
          </div>
-
-         <div class="row">
-                <div class="col">
-
-                  <div class="container d-flex justify-content-around next-hours">
-
-                    <div>
-                      <h5>Thu</h5>
-                      <i class="fas next-icon fa-cloud-showers-heavy"></i>
-                      <h5>11° C</h5>
-                    </div>
-
-                    <div>
-                        <h5>Fri</h5>
-                        <i class="fas next-icon fa-cloud-showers-heavy"></i>
-                        <h5>13° C</h5>
-                    </div>
-
-                    <div>
-                        <h5>Sat</h5>
-                        <i class="fas next-icon fa-cloud-showers-heavy"></i>
-                        <h5>13° C</h5>
-                    </div>
-
-                    <div>
-                        <h5>Sun</h5>
-                        <i class="fas next-icon fa-cloud-showers-heavy"></i>
-                        <h5>11° C</h5>
-                    </div>
-
-                    <div>
-                        <h5>Mon</h5>
-                        <i class="fas next-icon fa-cloud-showers-heavy"></i>
-                        <h5>12° C</h5>
-                    </div>
-
-                  </div>
-             </div>
-        </div>
-
-
-
+         <div class="row forecast-row" id="forecast"></div>
     </div>
     <div class="source-container container">
         <a href="https://github.com/Miluska-schaeffer/plus_project" class="open-source" target="_blank">Open-source code</a> by Miluska Schaeffer
-      </div>
-
+    </div>
   </div>
-
-
-
-
     <script src="src/index.js"></script>
-
-
-
   </body>
 
 </html>
