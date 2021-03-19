@@ -2,6 +2,7 @@
 /*forecast*/
 .forecast-row {
   padding: 15px;
+  display: flex;
 }
 
 .forecast-icon {
