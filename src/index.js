@@ -51,6 +51,7 @@ if(currentMinutes < 10) {
  return `${currentHour}:${currentMinutes}`;
 }
 
+
 function displayTemperature(response) {
   // console.log(response);
   let h1Temperature = document.querySelector("#h1-temperature");
@@ -105,7 +106,7 @@ function displayForecast(response) {
           ${formatTime(forecast.dt * 1000)}
         </h4>
         <img
-          class="forecast-icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          class="forecast-icon" src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
         <div class="">
           <span class="forecast-times">
              ${Math.round(forecast.main.temp_max)}°/
@@ -226,7 +227,7 @@ function searchLocation(position) {
   https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric
   `;
 
-   axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 
 }
 
