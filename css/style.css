@@ -1,0 +1,203 @@
+@import url("components/logo.css");
+@import url("components/form.css");
+@import url("components/main-buttons.css");
+@import url("components/fixed-cities-row.css");
+@import url("components/open-source-text.css");
+@import url("components/forecast-row.css");
+
+
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: white;
+  padding: 3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+  border-radius: 6px;
+  padding: 0;
+}
+
+ul li {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+ul li:hover {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: inherit;
+}
+
+input {
+  border: 1px solid lightgray;
+  border-radius: 7px;
+}
+
+.background-container {
+  border-radius: 7px;
+  display: block;
+  margin-top: 20px;
+  padding: 50px 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image: linear-gradient(#000000d6, #5308a3c9)
+}
+
+.weather-page {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.weather-app-row {
+  padding: 20px 40px;
+}
+
+@media (min-width: 375px){
+  .weather-app-row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 0 27px;
+
+  }
+}
+
+/**********left side************/
+
+.left-side {
+  padding-left: 46px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+@media (max-width: 500px){
+  .left-side {
+   font-size: 12px;
+
+  }
+}
+
+@media (max-width: 375px){
+  .left-side {
+   font-size: 10px;
+
+  }
+}
+
+.todays-date-text {
+ margin-bottom: 0px;
+}
+
+.city-time {
+  display: block;
+}
+
+.current-city {
+  margin-bottom: 0;
+}
+
+@media (max-width: 375px) {
+  .current-city, #current-country {
+    font-size: 1rem;
+
+  }
+}
+
+/********right side***************/
+.actual-temperature {
+  font-size:2rem;
+}
+
+
+.h1-temperature {
+  display: inline-block;
+}
+
+.temp-metrics {
+  display: inline;
+    position: relative;
+    top: -12px;
+}
+
+.temp-metrics .active {
+  color: white;
+  cursor: default;
+}
+
+.temp-metrics .active:hover {
+  text-decoration: none;
+}
+
+.celsius-temp,
+.farenheit-temp {
+  color: #ff5e78;
+  transition: all 200ms ease-in-out;
+
+}
+
+.celsius-temp:hover,
+.farenheit-temp:hover {
+  color: #ff5e787a;
+}
+
+.weather-description {
+  display: block;
+ }
+
+.weather-icon{
+  max-width: 200px;
+}
+
+@media (max-width: 500px) {
+  .right-side {
+    font-size: 14px;
+
+  }
+}
+
+@media (max-width: 375px){
+  .right-side {
+   font-size: 10px;
+
+  }
+}
+
+@media (min-width: 300px) {
+  .form-control {
+  width: 120px;
+  font-size: 10px;
+  }
+  .forecast-times {
+  font-size: 9px;
+  }
+  .forecast-icon {
+  max-width: 30px;
+  margin: 0 auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .form-control {
+  width: 125px;
+  }
+  .forecast-times {
+  font-size: 10px;
+  }
+}
+
+@media (min-width: 630px) {
+  .form-control {
+  width: 250px;
+  height: 40px;
+  }
+  .forecast-times {
+  font-size: 14px;
+  }
+
+}

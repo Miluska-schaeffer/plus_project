@@ -77,7 +77,7 @@ function displayTemperature(response) {
   timeElement.innerHTML = formatTime(dayTime);
 
   //
-  let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#weather-icon");
   let iconImg = response.data.weather[0].icon;
   iconElement.setAttribute(
     'src',

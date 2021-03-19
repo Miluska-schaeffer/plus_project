@@ -1,0 +1,16 @@
+/*open source text*/
+.open-source {
+  color: #ff5e787a ;
+  font-size: smaller;
+  transition: all 200ms ease-in-out;
+}
+
+.open-source:hover {
+  color: #ff5e78;
+  font-weight: bolder;
+  font-style: bold;
+  }
+
+.source-container {
+  color:lightgray;
+}

@@ -1,0 +1,25 @@
+ul.fixed-cities-card li a {
+  color: inherit;
+  display: inline-block;
+}
+
+ul.fixed-cities-card {
+  padding: 0px 24px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+ul.fixed-cities-card li{
+  display: inline;
+  text-align: left;
+  padding: 2px;
+}
+
+ul.fixed-cities-card a {
+  transition: all 200ms ease-in-out;
+}
+
+ul.fixed-cities-card a:hover {
+  color: #ff5e78;
+}

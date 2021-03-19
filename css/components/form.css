@@ -1,0 +1,15 @@
+.search-form-row {
+  margin-top: 3rem;
+}
+
+.search-form-container {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  height: 2rem;
+  width: 400px;
+  display: inline;
+
+  }
+}

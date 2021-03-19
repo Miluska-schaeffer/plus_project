@@ -1,0 +1,15 @@
+
+.fa-search,
+.fa-map-marker-alt {
+  font-size: medium;
+  color: #ff5e78;
+
+}
+
+/*@media (max-width: 375px){
+  .fa-search,
+  .fa-map-marker-alt {
+  font-size: small;
+  }
+}*/
+

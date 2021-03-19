@@ -1,0 +1,51 @@
+
+/*forecast*/
+.forecast-row {
+  padding: 15px;
+}
+
+.forecast-icon {
+  max-width: 50px;
+  margin: 0 auto;
+}
+
+.forecast-times {
+  font-size: 14px;
+}
+
+
+/*
+@media (min-width: 300px) {
+  .form-control {
+  width: 140px;
+  font-size: 8px;
+  }
+  .forecast-times {
+  font-size: 9px;
+  }
+  .forecast-icon {
+  max-width: 30px;
+  margin: 0 auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .form-control {
+  width: 200px;
+  }
+  .forecast-times {
+  font-size: 10px;
+  }
+}
+
+@media (min-width: 630px) {
+  .form-control {
+  width: 250px;
+  height: 40px;
+  }
+  .forecast-times {
+  font-size: 14px;
+  }
+
+}
+*/
