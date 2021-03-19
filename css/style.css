@@ -76,16 +76,33 @@ input {
   margin-top: 25px;
 }
 
+
+@media (max-width: 765px){
+  .left-side  {
+   font-size: 12px;
+  }
+  .current-city, .current-country{
+    font-size: 1.3rem;
+  }
+}
+
 @media (max-width: 500px){
-  .left-side {
+  .left-side  {
+    padding-left: 8px;
    font-size: 12px;
 
+  }
+  .current-city, .current-country{
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 375px){
   .left-side {
    font-size: 10px;
+  }
+  .current-city, .current-country {
+    font-size: 1rem;
 
   }
 }
@@ -102,12 +119,6 @@ input {
   margin-bottom: 0;
 }
 
-@media (max-width: 375px) {
-  .current-city, #current-country {
-    font-size: 1rem;
-
-  }
-}
 
 /********right side***************/
 .actual-temperature {
